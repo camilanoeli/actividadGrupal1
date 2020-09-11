@@ -1,12 +1,11 @@
 package triangulos;
 
 public class Triangulo {
+	int a;
+	int b;
+	int c;
 
-	double a;
-	double b;
-	double c;
-
-	public Triangulo(double a, double b, double c) {
+	public Triangulo(int a, int b, int c) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
@@ -14,31 +13,23 @@ public class Triangulo {
 
 	public String clasificar() {
 		String resultado = "";
-		if (esEntero(a) && esEntero(b) && esEntero(c)) {
-			if (a > 0 && b > 0 && c > 0) {
-				if (esTriangulo()) {
-					if (esEquilatero()) {
-						resultado = "Es equilátero";
-					} else if (esIsoceles()) {
-						resultado = "Es isóceles";
-					} else {
-						resultado = "Es escaleno";
-					}
+		if (a > 0 && b > 0 && c > 0) {
+			if (esTriangulo()) {
+				if (esEquilatero()) {
+					resultado = "Es equilátero";
+				} else if (esIsoceles()) {
+					resultado = "Es isóceles";
 				} else {
-					resultado = "No es un triángulo";
+					resultado = "Es escaleno";
 				}
 			} else {
-				resultado = "Los valores ingresados deben ser números mayores a 0";
+				resultado = "No es un triángulo";
 			}
 		} else {
-			resultado = "Los valores ingresados deben ser números enteros";
+			resultado = "Los valores ingresados deben ser números mayores a 0";
 		}
 
 		return resultado;
-	}
-
-	public boolean esEntero(double numero) {
-		return numero % 1 == 0;
 	}
 
 	public boolean esTriangulo() {
