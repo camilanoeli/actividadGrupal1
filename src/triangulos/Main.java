@@ -11,27 +11,43 @@ public class Main {
 		
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Ingrese el lado A: ");
+		System.out.print("Ingrese el lado A (entero positivo): ");
 		try {
 			ladoA = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("El numero ingresado debe ser un entero!\nCerrando.");
+			System.out.println("El lado A debe ser un entero.");
 			System.exit(1);
 		}
 		
-		System.out.print("Ingrese el lado B:");
+		if (ladoA <= 0) {
+			System.out.println("El lado A debe ser un numero entero positivo.");
+			System.exit(1);
+		}
+		
+		System.out.print("Ingrese el lado B (entero positivo):");
 		try {
 			ladoB = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("El numero ingresado debe ser un entero!\nCerrando.");
+			System.out.println("El lado B debe ser un entero.");
 			System.exit(1);
 		}
 		
-		System.out.print("Ingrese el lado C:");
+		if (ladoB <= 0) {
+			System.out.println("El lado B debe ser un numero entero positivo.");
+			System.exit(1);
+		}
+		
+		System.out.print("Ingrese el lado C (entero positivo):");
 		try {
 			ladoC = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("El numero ingresado debe ser un entero!\nCerrando.");
+			System.out.println("El lado C debe ser un entero!.");
+			System.exit(1);
+		}
+
+		
+		if (ladoC <= 0) {
+			System.out.println("El lado C debe ser un numero entero positivo.");
 			System.exit(1);
 		}
 		
