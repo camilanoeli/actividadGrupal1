@@ -13,20 +13,16 @@ public class Triangulo {
 
 	public String clasificar() {
 		String resultado = "";
-		if (a > 0 && b > 0 && c > 0) {
-			if (esTriangulo()) {
-				if (esEquilatero()) {
-					resultado = "Es equilátero";
-				} else if (esIsoceles()) {
-					resultado = "Es isóceles";
-				} else {
-					resultado = "Es escaleno";
-				}
+		if (esTriangulo()) {
+			if (esEquilatero()) {
+				resultado = "Es equilï¿½tero";
+			} else if (esIsoceles()) {
+				resultado = "Es isï¿½celes";
 			} else {
-				resultado = "No es un triángulo";
+				resultado = "Es escaleno";
 			}
 		} else {
-			resultado = "Los valores ingresados deben ser números mayores a 0";
+			resultado = "No es un triï¿½ngulo";
 		}
 
 		return resultado;
